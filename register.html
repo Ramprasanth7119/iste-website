@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(2, 2, 63);
+            @media (max-width: 768px) {
+    .nav-bar {
+        display: none; /* Hide the nav bar */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute;
+        background-color: #333;
+        top: 60px; /* Below the header */
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .nav-bar.active {
+        display: flex; /* Show the nav bar when active */
+    }
+
+    .hamburger {
+        display: flex; /* Show the hamburger menu */
+    }
+}
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #333;
+            color: white;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-bar {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .register {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .register form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .register input, .register select, .register button {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .register button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register button:hover {
+            background-color: #0056b3;
+        }
+
+        .confirmation-message {
+            margin-top: 1rem;
+            color: green;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ISTE-KEC</div>
+        <nav class="nav-bar">
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="register.html">Register</a>
+            <a href="about.html">Contact</a>
+        </nav>
+    </header>
+
+    <section id="register" class="register">
+        <h1>Event Registration</h1>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required>
+            
+            <label for="session">Select Event Session:</label>
+            <select id="session" required>
+                <option value="" disabled selected>Select a session</option>
+                <option value="session1">Session 1: Introduction to AI</option>
+                <option value="session2">Session 2: Web Development Basics</option>
+                <option value="session3">Session 3: Advanced Data Science</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="confirmation" class="confirmation-message" style="display:none;">
+            Thank you for registering! We will get back to you soon.
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ISTE-KEC Team</p>
+    </footer>
+
+    <script>
+        // Confirmation message on form submission
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            document.getElementById("confirmation").style.display = "block"; // Show confirmation message
+            this.reset(); // Reset the form fields
+        });
+    </script>
+</body>
+</html>

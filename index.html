@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTE-KEC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+<header>
+    <div class="logo">ISTE-KEC</div>
+    <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="nav-bar" id="nav-bar">
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="/iste/about.html">Contact</a></li>
+            <li><a href="/iste/Events.html">Events</a></li>
+            <li><a href="/iste/register.html">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="home">
+    <h1 class="home1">Welcome to ISTE-KEC</h1>
+    <p>Empowering future engineers with innovation and collaboration.</p>
+    <a href="register.html" class="cta-button">Register Now</a>
+    <a href="#about" class="cta-button">Learn More</a>
+</section>
+
+<section id="gallery" class="gallery">
+    <h1>Gallery</h1>
+    <div class="gallery-images">
+        <img src="images/iste.jpg" alt="Event 1">
+        <img src="images/iste.jpg" alt="Event 2">
+        <img src="images/iste.jpg" alt="Event 3">
+        <img src="images/iste.jpg" alt="Event 4">
+    </div>
+</section>
+
+<div class="cursor-follower"></div>
+<footer>
+    <p>&copy; 2024 ISTE-KEC Team</p>
+    <div class="social-icons">
+        <a href="https://twitter.com" target="_blank">
+            <img src="/iste/images/twitter.png" alt="Twitter" />
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="/iste/images/instagram.jpg" alt="Instagram" />
+        </a>
+        <a href="https://facebook.com" target="_blank">
+            <img src="/iste/images/facebook.png" alt="Facebook" />
+        </a>
+    </div>
+</footer>
+
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navBar = document.getElementById('nav-bar');
+
+    hamburger.addEventListener('click', () => {
+        navBar.classList.toggle('active');
+    });
+
+    const numAtoms = 10; // Number of atoms
+        const atoms = [];
+
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Create atom elements
+        for (let i = 0; i < numAtoms; i++) {
+            const atom = document.createElement('div');
+            atom.classList.add('atom');
+            atom.style.backgroundColor = getRandomColor(); // Set a random color for each atom
+            document.body.appendChild(atom);
+            atoms.push(atom);
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            // Update the position of each atom
+            atoms.forEach((atom, index) => {
+                const delay = index * 100; // Stagger the movement
+                setTimeout(() => {
+                    atom.style.left = `${e.pageX + (Math.random() * 20 - 10)}px`;
+                    atom.style.top = `${e.pageY + (Math.random() * 20 - 10)}px`;
+                }, delay);
+            });
+        });
+</script>
+
+</body>
+</html>

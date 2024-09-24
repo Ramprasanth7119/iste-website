@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    
+<style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(2, 2, 78);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+.nav-bar {
+    display: flex;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+}
+
+.home {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: url('https://source.unsplash.com/random/1600x900/?technology') no-repeat center center/cover;
+    color: white;
+}
+
+.home h1 {
+    font-size: 2.5rem;
+    transition: filter 0.3s; /* Smooth transition */
+}
+
+.home h1:hover {
+    filter: brightness(1.2); /* Brightens the text */
+}
+
+.cta-button {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.about, .events, .register, .contact, .gallery {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.gallery {
+    text-align: center;
+}
+
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery-images img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+.events .event {
+    margin-bottom: 1.5rem;
+}
+
+.add-to-cart {
+    background-color: darkgoldenrod;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: blue;
+    transform: scale(1.05);
+}
+
+.register form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.register input, .register button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.faq {
+    margin-top: 2rem;
+}
+
+.faq-item {
+    background-color: #f1f1f1;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-bar {
+        display: none; /* Hide the nav bar */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute;
+        background-color: #333;
+        top: 60px; /* Below the header */
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .nav-bar.active {
+        display: flex; /* Show the nav bar when active */
+    }
+
+    .hamburger {
+        display: flex; /* Show the hamburger menu */
+    }
+}
+
+footer a {
+        color: #fff;
+        text-indent: -9999px;
+        background: url("/iste/images/instagram.jpg");
+       
+}
+</style>
+</head>
+<body>
+    
+<section id="about" class="about">
+    <h1>About Us</h1>
+    <p>The Indian Society for Technical Education (ISTE) aims for the overall development of technical education in India.</p>
+</section>
+
+
+
+<section id="contact" class="contact">
+    <h1>Contact Us</h1>
+    <h2>Faculty Coordinators</h2>
+    <div class="contact-info">
+        <div>
+            <h3>Dr. P. Ravichandran, ME., Ph.D.</h3>
+            <p><i class='bx bx-phone'></i> +91 9965998989</p>
+        </div>
+        <div>
+            <h3>Mr. A. Ganesh, M.Tech</h3>
+            <p><i class='bx bx-phone'></i> +91 9578505841</p>
+        </div>
+    </div>
+    <h2>Student Coordinators</h2>
+    <div class="contact-info">
+        <div>
+            <h3>Mr. Ranjithkumar</h3>
+            <p><i class='bx bx-phone'></i> +91 9597928987</p>
+        </div>
+        <div>
+            <h3>Mr. Srinath</h3>
+            <p><i class='bx bx-phone'></i> +91 7010768854</p>
+        </div>
+        <div>
+            <h3>Ms. Anusri</h3>
+            <p><i class='bx bx-phone'></i> +91 9361996123</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+
